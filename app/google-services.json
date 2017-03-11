@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "947748870838",
+    "firebase_url": "https://peritagem-d8f8d.firebaseio.com",
+    "project_id": "peritagem-d8f8d",
+    "storage_bucket": "peritagem-d8f8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:947748870838:android:01ec75c318af5ca2",
+        "android_client_info": {
+          "package_name": "com.example.patricioeinstein.peritagem"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "947748870838-tjmnekeql7tigcti16m5aarl0unmpmvb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.patricioeinstein.peritagem",
+            "certificate_hash": "856eb91c0f86e98872c6b4c84631085dc3a4489b"
+          }
+        },
+        {
+          "client_id": "947748870838-d3tkt966l25b50rhjq5g8elej65oppd5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIzCnQ9Ro5Nb7x50Th2YDEEWqoMqEsy6A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "947748870838-d3tkt966l25b50rhjq5g8elej65oppd5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

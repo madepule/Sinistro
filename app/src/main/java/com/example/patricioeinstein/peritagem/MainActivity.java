@@ -5,10 +5,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-//import com.firebase.client.Firebase;
+import com.firebase.client.Firebase;
+
 
 public class MainActivity extends AppCompatActivity {
-//private Firebase firebase;
+    private Firebase firebase;
     private EditText txtnome;
     private Teste t1;
     @Override
@@ -16,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //teste
-       // firebase = ConnectFirebase.getFirebase();
-        
+       firebase = ConnectFirebase.getFirebase();
+
         txtnome = (EditText) findViewById(R.id.nome);
 
     }

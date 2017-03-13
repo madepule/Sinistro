@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         txtnome = (EditText) findViewById(R.id.nome);
 
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         t1 = new Teste();
         t1.setNome(txtnome.getText().toString());
 
-       // firebase.child("Testes").child("t1").setValue(t1);
+        firebase.child("Testes").child("t1").setValue(t1);
         return view;
     }
 

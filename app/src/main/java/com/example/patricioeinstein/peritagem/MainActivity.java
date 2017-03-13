@@ -15,11 +15,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
+
         //teste
        firebase = ConnectFirebase.getFirebase();
 
-        //txtnome = (EditText) findViewById(R.id.nome);
+        txtnome = (EditText) findViewById(R.id.nome);
 
     }
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         t1 = new Teste();
         t1.setNome(txtnome.getText().toString());
 
-        //firebase.child("Testes").child("t1").setValue(t1);
+        firebase.child("Testes").child("t1").setValue(t1);
         return view;
     }
 

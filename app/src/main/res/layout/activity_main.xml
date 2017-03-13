@@ -9,40 +9,97 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.patricioeinstein.peritagem.MainActivity"
-    android:background="@drawable/sinistro">
+    android:background="@drawable/sinistro"
+    android:minHeight="180dp">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_alignBaseline="@+id/nome"
-        android:layout_alignBottom="@+id/nome"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:text="Submeter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:onClick="submeter"
-        android:elevation="0dp"
-        style="@style/Base.TextAppearance.AppCompat.Body1"
+
+        <TextView
+            android:text="Nome:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nnome"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_alignBaseline="@+id/nome"
+            android:layout_alignBottom="@+id/nome"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="337dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/nome"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome" />
+
+        <TextView
+            android:text="Data Sinistro:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datasinistro"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_marginTop="25dp"
+            android:layout_below="@+id/nome"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="time"
+            android:ems="10"
+            android:id="@+id/dataa"
+            android:editable="false"/>
+
+        <TextView
+            android:text="Local:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/llocal"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_below="@+id/hhora"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="35dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/local"
+            android:layout_alignBaseline="@+id/llocal"
+            android:layout_alignBottom="@+id/llocal"
+            android:layout_alignLeft="@+id/hora"
+            android:layout_alignStart="@+id/hora" />
+
+        <Button
+            android:text="Submeter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnsubmeter"
+            android:onClick="submeter"
+            android:elevation="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </LinearLayout>
+
+
+    <ProgressBar
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
+        android:layout_centerHorizontal="true"
+        android:id="@+id/snackbarp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/nome"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
 </RelativeLayout>
+
+

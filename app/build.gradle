@@ -36,5 +36,7 @@ dependencies {
     compile 'com.firebase:firebase-client-android:2.5.1+'
     testCompile 'junit:junit:4.12'
     compile 'com.google.android.gms:play-services-appindexing:9.0.0'
+    compile 'com.android.support:design:23.2.0'
+
 }
 apply plugin: 'com.google.gms.google-services'

@@ -39,5 +39,6 @@ dependencies {
     compile 'com.android.support:design:23.2.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha5'
 
+    compile 'com.android.support:gridlayout-v7:24.0.0'
 }
 apply plugin: 'com.google.gms.google-services'

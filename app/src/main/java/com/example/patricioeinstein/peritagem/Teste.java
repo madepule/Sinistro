@@ -13,13 +13,24 @@ public class Teste {
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public String getDataa() {return dataa; }
-    public void setDataa(String dataa) {this.dataa = dataa; }
+    public String getDataa() {
+        return dataa;
+    }
 
-    public String getLocal() {return local; }
-    public void setLocal(String local) {this.local = local;}
+    public void setDataa(String dataa) {
+        this.dataa = dataa;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
 }

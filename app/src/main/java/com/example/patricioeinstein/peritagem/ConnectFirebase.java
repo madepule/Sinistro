@@ -12,11 +12,11 @@ public class ConnectFirebase {
 
     private static Firebase firebase;
 
-    public static Firebase getFirebase(){
-       if( firebase == null ){
-          firebase = new Firebase("https://peritagem-d8f8d.firebaseio.com/");
+    public static Firebase getFirebase() {
+        if (firebase == null) {
+            firebase = new Firebase("https://peritagem-d8f8d.firebaseio.com/");
         }
-      return( firebase );
-   }
+        return (firebase);
+    }
 
 }

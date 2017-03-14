@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/nnome"
             android:background="#ffc"
-            android:layout_width="wrap_content"
+            android:layout_width="338dp"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/nome"
             android:layout_alignBottom="@+id/nome"
@@ -37,12 +37,13 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:inputType="textPersonName"
-            android:background="?attr/actionModeBackground"/>
+            android:background="?attr/actionModeBackground"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/datasinistro"
             android:background="#ffc"
-            android:layout_width="wrap_content"
+            android:layout_width="362dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -58,12 +59,13 @@
             android:focusable="false"
             android:ems="10"
             android:inputType="time"
-            android:background="?attr/actionModeBackground"/>
+            android:background="?attr/actionModeBackground"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/llocal"
             android:background="#ffc"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -83,7 +85,8 @@
             android:ems="10"
             android:focusable="false"
             android:inputType="textPersonName"
-            android:background="?attr/actionModeBackground"/>
+            android:background="?attr/actionModeBackground"
+            android:textSize="24sp" />
 
         <Button
             android:id="@+id/btnsubmeter"
@@ -93,10 +96,11 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:elevation="0dp"
-            android:textColor="#000000"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:theme="@style/btnRed"
             android:onClick="submeter"
-            android:text="Submeter" />
+            android:text="Submeter"
+            android:textStyle="normal|bold" />
     </LinearLayout>
 
 

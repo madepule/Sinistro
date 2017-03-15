@@ -13,21 +13,21 @@ import java.util.List;
 /**
  * Created by Hawkingg on 05/09/2016.
  */
-public class CustomArrayAdapterH extends ArrayAdapter<Teste> {
+public class CustomArrayAdapterH extends ArrayAdapter<Sinistro> {
 
     private static  class ViewHolder
     {
         TextView txtInfo;
     }
 
-    public CustomArrayAdapterH(Context context, int resource, List<Teste> objects) {
+    public CustomArrayAdapterH(Context context, int resource, List<Sinistro> objects) {
         super(context, resource, objects);
 
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Teste info = getItem(position);
+        Sinistro info = getItem(position);
 
         ViewHolder viewHolder;
         if(convertView == null)

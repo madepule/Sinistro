@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.location.Location;
@@ -36,11 +35,15 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
     //instanciar a classe connectFirebas
     private Firebase firebase;
     private FirebaseAuth mAuth;
-    private Teste t1;
+    private Sinistro t1;
     private EditText txtnome;
     private EditText txtdata;
     private EditText txthora;
     private EditText txtlocal;
+    private EditText txtApolice;
+    private EditText txtMatricula;
+    private EditText txtLocalSinistro;
+    private EditText txtDanos;
     private int count = 0;
     private ProgressBar progressBar;
     private Button btnsubmeter;
@@ -79,6 +82,10 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
         txtdata = (EditText) findViewById(R.id.dataa);
         txthora = (EditText) findViewById(R.id.hora);
         txtlocal = (EditText) findViewById(R.id.local);
+        txtApolice = (EditText) findViewById(R.id.Apolice);
+        txtMatricula = (EditText) findViewById(R.id.matricula);
+        txtLocalSinistro = (EditText) findViewById(R.id.localsinistro);
+        txtDanos = (EditText) findViewById(R.id.danos);
         btnsubmeter = (Button) findViewById(R.id.btnsubmeter);
         Date dataActual = new Date();
         SimpleDateFormat spf = new SimpleDateFormat("dd/MMMM/yyyy hh:mm", new Locale("pt", "PT"));
@@ -131,7 +138,7 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
 
     public View submeter(View view) {
 
-        t1 = new Teste();
+        t1 = new Sinistro();
         t1.setNome(txtnome.getText().toString());
         t1.setDataa(txtdata.getText().toString());
         t1.setLocal(txtlocal.getText().toString());

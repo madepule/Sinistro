@@ -48,7 +48,7 @@ public class LoginActivity extends CommonActivity implements GoogleApiClient.OnC
         initViews();
         initUser();
     }
-
+//teste
     @Override
     protected void onStart() {
         super.onStart();

@@ -34,6 +34,8 @@
         <activity
             android:name=".ResetActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RegistroActivity" />
+        <activity android:name=".HistoricoActivity" />
         <activity android:name=".MainActivity" />
         <meta-data
             android:name="com.google.android.gms.version"

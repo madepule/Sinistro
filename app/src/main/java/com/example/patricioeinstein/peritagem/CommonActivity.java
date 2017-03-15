@@ -23,7 +23,7 @@ abstract public class CommonActivity extends AppCompatActivity {
                 Snackbar.LENGTH_LONG)
                 .setAction("Action", null);
         View snackBarView = snackbar.getView();
-        snackBarView.setBackgroundColor(Color.parseColor("#ff21ab29")); // snackbar background color
+        snackBarView.setBackgroundColor(Color.parseColor("#ff1a1a")); // snackbar background color
         snackbar.setActionTextColor(Color.parseColor("#FFFFEE19")); // snackbar action text color
         snackbar.show();
     }

@@ -1,154 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minHeight="180dp"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.patricioeinstein.peritagem.MainActivity">
+    tools:context=".MainActivity"
+    android:background="#FFFFFF">
 
-
+    <include
+        layout="@layout/content_main" />
     <ProgressBar
-        android:id="@+id/snackbarp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:id="@+id/progressMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:weightSum="1">
-
-
-        <TextView
-            android:id="@+id/nnome"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/nome"
-            android:layout_alignBottom="@+id/nome"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:text="Nome do Sugurado:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <EditText
-            android:id="@+id/nome"
-            android:layout_width="337dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:background="?attr/actionModeBackground"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/datasinistro"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/nome"
-            android:layout_marginTop="25dp"
-            android:text="Data do Sinistro:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <EditText
-            android:id="@+id/dataa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="false"
-            android:ems="10"
-            android:inputType="time"
-            android:background="?attr/actionModeBackground"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/llocal"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/hhora"
-            android:layout_marginTop="35dp"
-            android:text="Localização em Coordenadas:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <EditText
-            android:id="@+id/local"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/llocal"
-            android:layout_alignBottom="@+id/llocal"
-            android:layout_alignLeft="@+id/hora"
-            android:layout_alignStart="@+id/hora"
-            android:ems="10"
-            android:focusable="false"
-            android:inputType="textPersonName"
-            android:background="?attr/actionModeBackground"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/ddescricaoloca"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/hhora"
-            android:layout_marginTop="35dp"
-            android:text="Descrição do Local"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <EditText
-            android:id="@+id/descrilocal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:background="?attr/actionModeBackground"
-            android:textSize="24sp" />
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/btnsubmeter"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
-                android:theme="@style/btnRed"
-                android:onClick="submeter"
-                android:text="Submeter"
-                android:textStyle="normal|bold" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-
-</LinearLayout>
+</RelativeLayout>

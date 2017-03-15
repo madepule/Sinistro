@@ -26,6 +26,7 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -37,6 +38,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity implements Firebase.CompletionListener, LocationListener {
     //instanciar a classe connectFirebas
     private Firebase firebase;
+    private FirebaseAuth mAuth;
     private Teste t1;
     private EditText txtnome;
     private EditText txtdata;
@@ -70,10 +72,10 @@ public class MainActivity extends AppCompatActivity implements Firebase.Completi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Firebase.setAndroidContext(this);
         //teste
         firebase = ConnectFirebase.getFirebase();
-
+        mAuth = FirebaseAuth.getInstance(); //estamos a buscar a instancia da Autenticacao do Firebase
         txtnome = (EditText) findViewById(R.id.nome);
         txtdata = (EditText) findViewById(R.id.dataa);
         txthora = (EditText) findViewById(R.id.hora);
@@ -136,7 +138,30 @@ public class MainActivity extends AppCompatActivity implements Firebase.Completi
         count += 1;
         // firebase.child("Testes").child("t1").setValue(t1);
         //salvar os dados no firebase
-        ConnectFirebase.getFirebase().child("Testes").child("t" + count).setValue(t1);
+        ConnectFirebase.getFirebase().child("Testes").child("t" + count).setValue(t1, new Firebase.CompletionListener() {
+            @Override
+            public void onComplete(FirebaseError firebaseError, Firebase firebase) {
+                if (firebaseError != null) {
+                    // Toast.makeText( this, "Falhou: "+firebaseError.getMessage(), Toast.LENGTH_LONG ).show();
+                    progressBar = (ProgressBar) findViewById(R.id.snackbarp);
+                    Snackbar.make(progressBar, "Falhou: " + firebaseError.getMessage(), Snackbar.LENGTH_LONG)
+                            .setActionTextColor(Color.RED)
+                            .show();
+                } else {
+                    //Toast.makeText( this, "Atualização realizada com sucesso.", Toast.LENGTH_SHORT ).show();
+                    progressBar = (ProgressBar) findViewById(R.id.snackbarp);
+                    Snackbar.make(progressBar,
+                            "Dados Submetidos Com Sucesso.", Snackbar.LENGTH_LONG)
+                            .setActionTextColor(Color.RED)
+                            .show();
+
+
+                    //Qunado ele submeter com sucesso vai desautenticar
+                    mAuth.signOut(); //estamos a desautenticar
+                    //agora vamos testart se funciona
+                }
+            }
+        });
         return view;
     }
 
@@ -156,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements Firebase.Completi
             Snackbar.make(progressBar, "Atualização realizada com sucesso.", Snackbar.LENGTH_LONG)
                     .setActionTextColor(Color.RED)
                     .show();
+
         }
     }
 

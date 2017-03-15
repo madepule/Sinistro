@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/red"
-            android:textColor="@color/buttonTextColor"
+
             android:textStyle="normal|bold" />
     </RelativeLayout>
 </ScrollView>

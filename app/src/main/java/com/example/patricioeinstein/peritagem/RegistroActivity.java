@@ -76,6 +76,7 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
         Firebase.setAndroidContext(this);
+        //mAuth.signOut();
         Intent intent = getIntent();
         ut= (Utilizador) intent.getSerializableExtra("utilizador");
         //Sinistro
@@ -87,7 +88,7 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
         txtlocal = (EditText) findViewById(R.id.local);
         txtApolice = (EditText) findViewById(R.id.Apolice);
         txtMatricula = (EditText) findViewById(R.id.matricula);
-        txtLocalSinistro = (EditText) findViewById(R.id.localsinistro);
+        txtLocalSinistro = (EditText) findViewById(R.id.descricaosinistro);
         txtDanos = (EditText) findViewById(R.id.danos);
         txtNometerceiro  = (EditText) findViewById(R.id.nometerceiro);
         txtMatriculaterceiro = (EditText) findViewById(R.id.matriculaterceiro);
@@ -136,7 +137,7 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
                 loc= getLocation();
                 if(loc != null)
                 {
-                    txtlocal.setText(latitude + ":" + longitude);
+                    txtlocal.setText("Latitude: "+latitude + " Longitude:" + longitude);
                 }
             }
         }
@@ -149,6 +150,14 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
         t1.setNome(txtnome.getText().toString());
         t1.setDataa(txtdata.getText().toString());
         t1.setLocal(txtlocal.getText().toString());
+        t1.setApolice(txtApolice.getText().toString());
+        t1.setMatricula(txtMatricula.getText().toString());
+        t1.setDescricaosinistro(txtLocalSinistro.getText().toString());
+        t1.setNometerceiro(txtNometerceiro.getText().toString());
+        t1.setMatriculaterceiro(txtMatriculaterceiro.getText().toString());
+        t1.setDanos(txtDanos.getText().toString());
+        t1.setDanosterceiro(txtDanosterceiro.getText().toString());
+
         progressBar.setVisibility(View.VISIBLE);
         // firebase.child("Testes").child("t1").setValue(t1);
         //salvar os dados no firebase
@@ -170,7 +179,6 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
                             "Dados Submetidos Com Sucesso.", Snackbar.LENGTH_LONG)
                             .setActionTextColor(Color.RED)
                             .show();
-
 
                     //Qunado ele submeter com sucesso vai desautenticar
                     //mAuth.signOut(); //estamos a desautenticar

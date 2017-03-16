@@ -84,6 +84,8 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         mAuth = FirebaseAuth.getInstance();
         mAuth.addAuthStateListener(authStateListener);
         databaseReference = ConnectFirebase.getDatabaseReference();
+        //Firebase.setAndroidContext(this);
+        //mAuth.signOut();
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Iniciando Peritagem @ EMOSE, Por favor aguarde...");
         progressDialog.setIndeterminate(true);

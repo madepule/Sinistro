@@ -11,7 +11,7 @@ public class Sinistro {
     private String local;
     private String apolice;
     private String matricula;
-    private String localsinistro;
+    private String descricaosinistro;
     private String danos;
     private String nometerceiro;
     private String matriculaterceiro;
@@ -44,8 +44,8 @@ public class Sinistro {
     public String getMatricula() { return matricula; }
     public void setMatricula(String matricula) { this.matricula = matricula; }
 
-    public String getLocalsinistro() { return localsinistro; }
-    public void setLocalsinistro(String localsinistro) { this.localsinistro = localsinistro; }
+    public String getDescricaosinistro() { return descricaosinistro; }
+    public void setDescricaosinistro(String descricaosinistro) { this.descricaosinistro = descricaosinistro; }
 
     public String getDanos() { return danos; }
     public void setDanos(String danos) { this.danos = danos;}
@@ -58,4 +58,14 @@ public class Sinistro {
 
     public String getDanosterceiro() {return danosterceiro;}
     public void setDanosterceiro(String danosterceiro) {this.danosterceiro = danosterceiro;}
+
+
+    @Override
+    public String toString() {
+        return "Número Apólice: "+getApolice()+ "\n"+
+                "Nome:"+getNome()+"\n"+
+                "Data do Sinistro:"+getDataa()+"\n"+
+                "Local do Sinistro"+getLocal()+"\n"+
+                "Matrícula da Viatura"+getMatricula();
+    }
 }

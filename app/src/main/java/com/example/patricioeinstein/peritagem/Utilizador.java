@@ -12,7 +12,7 @@ import java.util.Map;
 
 
 public class Utilizador implements Serializable {
-    public static String PROVIDER = "mz.maputobustracker.domain.Utilizador.PROVIDER";
+    public static String PROVIDER = "com.example.patricioeinstein.peritagem.Utilizador.PROVIDER";
 
 
     private String id;

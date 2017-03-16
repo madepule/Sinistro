@@ -44,6 +44,9 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
     private EditText txtMatricula;
     private EditText txtLocalSinistro;
     private EditText txtDanos;
+    private EditText txtNometerceiro;
+    private EditText txtMatriculaterceiro;
+    private EditText txtDanosterceiro;
     private int count = 0;
     private ProgressBar progressBar;
     private Button btnsubmeter;
@@ -75,7 +78,7 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
         Firebase.setAndroidContext(this);
         Intent intent = getIntent();
         ut= (Utilizador) intent.getSerializableExtra("utilizador");
-        //teste
+        //Sinistro
         firebase = ConnectFirebase.getFirebase();
         mAuth = FirebaseAuth.getInstance(); //estamos a buscar a instancia da Autenticacao do Firebase
         txtnome = (EditText) findViewById(R.id.nome);
@@ -86,7 +89,11 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
         txtMatricula = (EditText) findViewById(R.id.matricula);
         txtLocalSinistro = (EditText) findViewById(R.id.localsinistro);
         txtDanos = (EditText) findViewById(R.id.danos);
+        txtNometerceiro  = (EditText) findViewById(R.id.nometerceiro);
+        txtMatriculaterceiro = (EditText) findViewById(R.id.matriculaterceiro);
+        txtDanosterceiro = (EditText) findViewById(R.id.danosterceiro);
         btnsubmeter = (Button) findViewById(R.id.btnsubmeter);
+
         Date dataActual = new Date();
         SimpleDateFormat spf = new SimpleDateFormat("dd/MMMM/yyyy hh:mm", new Locale("pt", "PT"));
         String dataformatada = spf.format(dataActual);

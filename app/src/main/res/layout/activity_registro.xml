@@ -348,6 +348,27 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/modeloan"
+            android:background="@color/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hhora"
+            android:text="Modelo e Ano:"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <EditText
+            android:id="@+id/modeloano"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="20sp" />
+
+        <TextView
             android:id="@+id/corr"
             android:background="@color/yellow"
             android:layout_width="match_parent"
@@ -360,72 +381,6 @@
 
         <EditText
             android:id="@+id/cor"
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/matriculater"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/hhora"
-            android:text="Matricula da Viatura do Terceiro:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <EditText
-            android:id="@+id/matriculaterceiro"
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/seguradoraa"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/hhora"
-            android:text="Seguradora:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <EditText
-            android:id="@+id/seguradora"
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/modeloan"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/hhora"
-            android:text="Modelo e Ano:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-
-
-
-        <EditText
-            android:id="@+id/modeloano"
             android:layout_width="match_parent"
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
@@ -456,69 +411,170 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/ddescricaoloca"
+            android:id="@+id/seguradoraa"
             android:background="@color/yellow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
-            android:text="Descrição do Local e Forma como ocorreu o Acidente:"
+            android:text="Seguradora:"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
         <EditText
-            android:id="@+id/descricaosinistro"
+            android:id="@+id/seguradora"
             android:layout_width="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:background="?attr/actionModeBackground"
-            android:textSize="20sp"
-            android:layout_height="60dp" />
-
-        <TextView
-            android:id="@+id/danosviatura"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/hhora"
-            android:text="Danos Causados ao Veiculo Segurado:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <EditText
-            android:id="@+id/danos"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:background="?attr/actionModeBackground"
-            android:textSize="20sp"
-
-            />
-
-        <TextView
-            android:id="@+id/danosterc"
-            android:background="@color/yellow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/hhora"
-            android:text="Danos Causados ao Veiculo Terceiro"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <EditText
-            android:id="@+id/danosterceiro"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
             android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/nomeouto"
+            android:background="@color/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hhora"
+            android:text="Nome do Outro Condutor:"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <EditText
+            android:id="@+id/nomeoutrocond"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/enderecoter"
+            android:background="@color/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hhora"
+            android:text="Endereço do outro Condutor :"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <EditText
+            android:id="@+id/enderecoterceiro"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/telefoneter"
+            android:background="@color/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hhora"
+            android:text="Telefone do Terceiro:"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <EditText
+            android:id="@+id/telefoneterceiro"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Croquii"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Croqui:"
+            android:layout_gravity="center"
+            android:textSize="22dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <EditText
+            android:id="@+id/croqui"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/contactosegurad"
+            android:background="@color/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hhora"
+            android:text="Contacto da Seguradora:"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <EditText
+            android:id="@+id/contactoseguradora"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/enderecosegurad"
+            android:background="@color/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hhora"
+            android:text="Endereço da Seguradora:"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <EditText
+            android:id="@+id/enderecoseguradora"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/empresasegurad"
+            android:background="@color/yellow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/hhora"
+            android:text="Empresa Seguradora dos Veículos:"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <EditText
+            android:id="@+id/empresaseguradora"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="20sp"/>
 
         <Button
             android:id="@+id/btnsubmeter"

@@ -503,15 +503,35 @@
             android:textSize="22dp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
-        <EditText
-            android:id="@+id/croqui"
+        <Button
+            android:id="@+id/btnactivityFotos"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:theme="@style/btnRed"
+            android:onClick="callFotos"
+            android:text="Clique para Selecionar fotos do Sinistro"
+            android:layout_gravity="center"
+            android:textStyle="normal|bold" />
+        <TextView
+            android:id="@+id/Croquii"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Croqui:"
+            android:layout_gravity="center"
+            android:textSize="22dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <Button
+            android:id="@+id/btnactivityCanvas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:theme="@style/btnRed"
+            android:onClick="callCanvas"
+            android:text="Clique para Demarcar sobre Imágens do Sinistro"
+            android:layout_gravity="center"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/contactosegurad"

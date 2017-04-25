@@ -88,11 +88,11 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
         txtlocal = (EditText) findViewById(R.id.local);
         txtApolice = (EditText) findViewById(R.id.Apolice);
         txtMatricula = (EditText) findViewById(R.id.matricula);
-        txtLocalSinistro = (EditText) findViewById(R.id.descricaosinistro);
-        txtDanos = (EditText) findViewById(R.id.danos);
+       // txtLocalSinistro = (EditText) findViewById(R.id.descricaosinistro);
+        //txtDanos = (EditText) findViewById(R.id.danos);
         txtNometerceiro  = (EditText) findViewById(R.id.nometerceiro);
-        txtMatriculaterceiro = (EditText) findViewById(R.id.matriculaterceiro);
-        txtDanosterceiro = (EditText) findViewById(R.id.danosterceiro);
+        //txtMatriculaterceiro = (EditText) findViewById(R.id.matriculaterceiro);
+        //txtDanosterceiro = (EditText) findViewById(R.id.danosterceiro);
         btnsubmeter = (Button) findViewById(R.id.btnsubmeter);
 
         Date dataActual = new Date();
@@ -142,6 +142,18 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
             }
         }
 
+    }
+
+    public View callCanvas(View view) {
+        Intent intent = new Intent(RegistroActivity.this, CanvasActivity.class);
+        startActivity(intent);
+        return  view;
+    }
+
+    public View callFotos(View view) {
+        //MADEPULE IMPLEMENTE O METODO QUE NEM FEITO AI EM CIMA NO CALLCANVAS.......
+        //
+        return  view;
     }
 
     public View submeter(View view) {

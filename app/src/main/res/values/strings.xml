@@ -2,6 +2,10 @@
     <string name="app_name">Peritagem</string>
     <string name="prompt_name">Nome</string>
     <string name="prompt_email">Email</string>
+    <string name="action_settings">Settings</string>
+    <string name="str_image_path" />
+    <string name="str_image_google_drive" />
+    <string name="str_select_image" />
     <string name="title_activity_sign_up">Cadastro</string>
     <string name="title_activity_main">Menu Principal</string>
     <string name="prompt_password">Senha</string>

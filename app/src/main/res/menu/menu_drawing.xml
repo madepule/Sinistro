@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_erase"
+        android:title="Apagar desenho"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_delete"
+        android:title="Apagar Foto"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_undo"
+        android:title="Undo"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_brush"
+        android:title="Brush"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_color"
+        android:title="Colorir"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_save"
+        android:title="Salvar"
+        app:showAsAction="always" />
+</menu>

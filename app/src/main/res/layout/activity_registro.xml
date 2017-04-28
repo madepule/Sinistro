@@ -35,14 +35,13 @@
             android:layout_height="wrap_content"
             android:text="Detalhes do Acidente"
             android:layout_gravity="center"
-            android:textSize="22dp"
+            android:textSize="20dp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
             />
         <TextView
 
             android:id="@+id/nnome"
-            android:background="@color/yellow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/nome"
@@ -50,7 +49,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="Nome do Segurado:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            android:textSize="14dp"
+            android:textColor="#FF0000" />
 
         <EditText
             android:id="@+id/nome"
@@ -60,11 +60,12 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/aapolice"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/nome"
@@ -72,7 +73,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="Número de Apólice:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/Apolice"
@@ -82,18 +83,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/datasinistro"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/nome"
             android:text="Data e Hora do Sinistro:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+       />
 
         <EditText
             android:id="@+id/dataa"
@@ -104,23 +106,24 @@
             android:ems="10"
             android:inputType="time"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/llocal"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Localização em Coordenadas GPS:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/local"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="60dp"
             android:layout_alignBaseline="@+id/llocal"
             android:layout_alignBottom="@+id/llocal"
             android:layout_alignLeft="@+id/hora"
@@ -128,19 +131,20 @@
             android:ems="10"
             android:focusable="false"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp"
+            android:textSize="14sp"
              />
 
         <TextView
             android:id="@+id/ruaa"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Rua/Avenida:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+           />
 
         <EditText
             android:id="@+id/rua"
@@ -150,18 +154,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/provinciaa"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Província:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+ />
 
         <EditText
             android:id="@+id/provincia"
@@ -171,18 +176,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/cidadee"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Cidade:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+          />
 
         <EditText
             android:id="@+id/cidade"
@@ -192,18 +198,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/velocisegurado"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Velocidade do Segurado:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+             />
 
         <EditText
             android:id="@+id/velocidadesegurado"
@@ -213,18 +220,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/velociterceiro"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Velocidade do Terceiro:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+             />
 
         <EditText
             android:id="@+id/velocidadeterceiro"
@@ -234,45 +242,48 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/descricaoDanos"
+            android:id="@+id/Croquiii"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Descrição dos Danos dos Veículos"
+            android:text="Pressione o Botao para Desenhar o Croqui"
             android:layout_gravity="center"
-            android:textSize="22dp"
+            android:textSize="20dp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
-        <EditText
-            android:id="@+id/danosveiculos"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+        <Button
+            android:id="@+id/btnactivityCanvas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:theme="@style/btnRed"
+            android:onClick="callCanvas"
+            android:text="Desenhar Croqui"
+            android:layout_gravity="center"
+            android:textStyle="normal|bold" />
+
         <TextView
             android:id="@+id/detalhesdoterceiro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Detalhes do veículo Terceiro e Condutor"
             android:layout_gravity="center"
-            android:textSize="22dp"
+            android:textSize="20dp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
         <TextView
             android:id="@+id/nomep"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Nome do Propietário:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/nometerceiro"
@@ -282,18 +293,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/enderecoprop"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Endereço do Propietário:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/enderecoproprietario"
@@ -303,18 +315,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tefefonep"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Telefone do Proprietário:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+         />
 
         <EditText
             android:id="@+id/telefoneproprietario"
@@ -324,18 +337,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/marcav"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Marca do Veículo:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+             />
 
         <EditText
             android:id="@+id/marcaveiculo"
@@ -345,18 +359,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/modeloan"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Modelo e Ano:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+             />
 
         <EditText
             android:id="@+id/modeloano"
@@ -366,18 +381,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/corr"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Cor:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+             />
 
         <EditText
             android:id="@+id/cor"
@@ -387,18 +403,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/matriculaSegurado"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Matricula da Viatura do Segurado:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+             />
 
         <EditText
             android:id="@+id/matricula"
@@ -408,18 +425,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/seguradoraa"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Seguradora:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/seguradora"
@@ -429,18 +447,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/nomeouto"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Nome do Outro Condutor:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+           />
 
         <EditText
             android:id="@+id/nomeoutrocond"
@@ -450,18 +469,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/enderecoter"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Endereço do outro Condutor :"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/enderecoterceiro"
@@ -471,18 +491,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/telefoneter"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Telefone do Terceiro:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+             />
 
         <EditText
             android:id="@+id/telefoneterceiro"
@@ -492,20 +513,20 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp" />
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/Croquii"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Croqui:"
+            android:text="Tirar fotos do Sinistro"
             android:layout_gravity="center"
-            android:textSize="22dp"
+            android:textSize="20dp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
         <Button
             android:id="@+id/btnactivityFotos"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:theme="@style/btnRed"
@@ -513,36 +534,18 @@
             android:text="Clique para Selecionar fotos do Sinistro"
             android:layout_gravity="center"
             android:textStyle="normal|bold" />
-        <TextView
-            android:id="@+id/Croquii"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Croqui:"
-            android:layout_gravity="center"
-            android:textSize="22dp"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
-        <Button
-            android:id="@+id/btnactivityCanvas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:theme="@style/btnRed"
-            android:onClick="callCanvas"
-            android:text="Clique para Demarcar sobre Imágens do Sinistro"
-            android:layout_gravity="center"
-            android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/contactosegurad"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Contacto da Seguradora:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/contactoseguradora"
@@ -552,18 +555,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/enderecosegurad"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Endereço da Seguradora:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/enderecoseguradora"
@@ -573,18 +577,19 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp"/>
+            android:textSize="14sp"/>
 
         <TextView
             android:id="@+id/empresasegurad"
-            android:background="@color/yellow"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Empresa Seguradora dos Veículos:"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            />
 
         <EditText
             android:id="@+id/empresaseguradora"
@@ -594,7 +599,7 @@
             android:layout_toRightOf="@+id/nnome"
             android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="20sp"/>
+            android:textSize="14sp"/>
 
         <Button
             android:id="@+id/btnsubmeter"

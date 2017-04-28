@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -34,6 +35,14 @@ public class CanvasActivity extends AppCompatActivity implements Firebase.Comple
 
         Button btnImag = (Button) findViewById(R.id.uploadImagem);
 
+        Button btngravar = (Button) findViewById(R.id.gravar);
+        btngravar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(CanvasActivity.this, "Gravado com sucesso", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         btnImag.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -42,6 +51,7 @@ public class CanvasActivity extends AppCompatActivity implements Firebase.Comple
 
                     Intent intent = new Intent();
                     intent.setType("image/*");
+                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
                     intent.setAction(Intent.ACTION_GET_CONTENT);
                     startActivityForResult(Intent.createChooser(intent,"Selecciona a Imagem" ), PICK_IMAGE_REQUEST);
                 }
@@ -91,6 +101,4 @@ public class CanvasActivity extends AppCompatActivity implements Firebase.Comple
     public void onComplete(FirebaseError firebaseError, Firebase firebase) {
 
     }
-
-
 }

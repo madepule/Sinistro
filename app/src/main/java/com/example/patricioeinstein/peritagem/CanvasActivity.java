@@ -59,8 +59,10 @@ public class CanvasActivity extends AppCompatActivity implements Firebase.Comple
                     Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                     intent.addCategory(Intent.CATEGORY_OPENABLE);
                     intent.setType("image/*");
-                    //intent.setAction(Intent.ACTION_GET_CONTENT);
+                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                    intent.setAction(Intent.ACTION_GET_CONTENT);
                     startActivityForResult(Intent.createChooser(intent,"Selecciona a Imagem" ), PICK_IMAGE_REQUEST);
+
                 }
 
             }

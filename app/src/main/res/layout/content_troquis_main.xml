@@ -14,38 +14,67 @@
     tools:context="com.example.patricioeinstein.peritagem.CanvasActivity"
     tools:showIn="@layout/activity_troquis_main">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7"
+        android:text="___________________"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black" />
+    <TextView
+        android:text="Desenhe o Croqui ilustrativo do acidente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/desenhe"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/textView7"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginRight="0dp"
+        android:layout_marginEnd="0dp"
+        >
+
     <Button
         android:id="@+id/limpar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Limpar a Tela "
-        android:background="#FF0000"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:theme="@style/btnRed"
+        android:textStyle="normal|bold"
         android:onClick="limparTela"/>
+
+
+        <Button
+            android:id="@+id/uploadImagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Upload "
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:theme="@style/btngreen"
+            android:textStyle="normal|bold"
+            android:onClick="limparTela"/>
 
     <Button
         android:id="@+id/gravar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gravar"
-        android:background="#FF0000"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp" />
-
-    <Button
-        android:text="Upload"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/uploadImagem"
-        android:background="#32CD32"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
-
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:theme="@style/btnRed"
+        android:textStyle="normal|bold"
+        />
+ </LinearLayout>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,7 +82,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/limpar" />
+        android:layout_above="@+id/linear" />
 
 
     <com.example.patricioeinstein.peritagem.CanvasView
@@ -64,7 +93,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_above="@+id/limpar" />
+        android:layout_above="@+id/linear" />
 
 
 </RelativeLayout>

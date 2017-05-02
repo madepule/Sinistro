@@ -144,18 +144,6 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
 
     }
 
-    public View callCanvas(View view) {
-        Intent intent = new Intent(RegistroActivity.this, CanvasActivity.class);
-        startActivity(intent);
-        return  view;
-    }
-
-    public View callFotos(View view) {
-        //MADEPULE IMPLEMENTE O METODO QUE NEM FEITO AI EM CIMA NO CALLCANVAS.......
-        //
-        return  view;
-    }
-
     public View submeter(View view) {
 
         t1 = new Sinistro();

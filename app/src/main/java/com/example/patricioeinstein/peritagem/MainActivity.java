@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
             Manifest.permission.READ_CONTACTS,
             Manifest.permission.ACCESS_NETWORK_STATE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
-            Manifest.permission.READ_PHONE_STATE};
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.CAMERA};
 
     private SharedPreferences permissionStatus;
     private boolean sentToSettings = false;
@@ -109,6 +110,7 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
                         || ActivityCompat.checkSelfPermission(MainActivity.this, permissionsRequired[5]) != PackageManager.PERMISSION_GRANTED
                         || ActivityCompat.checkSelfPermission(MainActivity.this, permissionsRequired[6]) != PackageManager.PERMISSION_GRANTED
                         || ActivityCompat.checkSelfPermission(MainActivity.this, permissionsRequired[7]) != PackageManager.PERMISSION_GRANTED
+                        || ActivityCompat.checkSelfPermission(MainActivity.this, permissionsRequired[8]) != PackageManager.PERMISSION_GRANTED
                         ) {
                     if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissionsRequired[0])
                             || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissionsRequired[1])
@@ -117,7 +119,8 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
                             || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissionsRequired[4])
                             || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissionsRequired[5])
                             || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissionsRequired[6])
-                            || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissionsRequired[7])) {
+                            || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissionsRequired[7])
+                            || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, permissionsRequired[8])) {
                         //Show Information about why you need the permission
                         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                         builder.setTitle("Aplicação necessita de Permissões");
@@ -213,7 +216,8 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
                     || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,permissionsRequired[4])
                     || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,permissionsRequired[5])
                     || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,permissionsRequired[6])
-                    || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,permissionsRequired[7])){
+                    || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,permissionsRequired[7])
+                    || ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,permissionsRequired[8])){
                 Toast.makeText(getBaseContext(),"Permissões Requeridas",Toast.LENGTH_LONG).show();
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Aplicação necessita de Permissões");
@@ -332,7 +336,7 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         u = dataSnapshot.getValue( Utilizador.class );
         txtNomeUt.setText( u.getName());
         progressDialog.dismiss();
-        i = new Intent(MainActivity.this,RegistroActivity.class);
+        i = new Intent(MainActivity.this,NovoActivity.class);
         i.putExtra("utilizador",u);
         System.out.println("-----------------------------"+u.getId());
         System.out.println("ID"+u.getId());

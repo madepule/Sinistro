@@ -4,10 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Peritagem.iml" filepath="$PROJECT_DIR$/Peritagem.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sinistro.iml" filepath="$PROJECT_DIR$/Sinistro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Sinistro.iml" filepath="$PROJECT_DIR$/Sinistro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Sinistro.iml" filepath="$PROJECT_DIR$/Sinistro.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -264,7 +264,6 @@
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:theme="@style/btnRed"
             android:textStyle="normal|bold"
-            android:onClick="submeter"
             android:text="Gravar"
             android:layout_gravity="center"
              />

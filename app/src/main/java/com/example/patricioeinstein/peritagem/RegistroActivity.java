@@ -149,14 +149,14 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
         t1 = new Sinistro();
         t1.setNome(txtnome.getText().toString());
         t1.setDataa(txtdata.getText().toString());
-        t1.setLocal(txtlocal.getText().toString());
+      //t1.setLocal(txtlocal.getText().toString());
         t1.setApolice(txtApolice.getText().toString());
         t1.setMatricula(txtMatricula.getText().toString());
-        t1.setDescricaosinistro(txtLocalSinistro.getText().toString());
+      //t1.setDescricaosinistro(txtLocalSinistro.getText().toString());
         t1.setNometerceiro(txtNometerceiro.getText().toString());
-        t1.setMatriculaterceiro(txtMatriculaterceiro.getText().toString());
-        t1.setDanos(txtDanos.getText().toString());
-        t1.setDanosterceiro(txtDanosterceiro.getText().toString());
+        //t1.setMatriculaterceiro(txtMatriculaterceiro.getText().toString());
+       // t1.setDanos(txtDanos.getText().toString());
+        //t1.setDanosterceiro(txtDanosterceiro.getText().toString());
 
         progressBar.setVisibility(View.VISIBLE);
         // firebase.child("Testes").child("t1").setValue(t1);

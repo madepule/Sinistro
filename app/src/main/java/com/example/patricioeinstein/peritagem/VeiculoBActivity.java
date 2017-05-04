@@ -5,8 +5,10 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
@@ -51,7 +53,14 @@ public class VeiculoBActivity extends AppCompatActivity{
         String dataformatada = spf.format(dataActual);
         progressBar = (ProgressBar) findViewById(R.id.snackbarp);
 
+        Button gravarterceiro = (Button) findViewById(R.id.btngravarveiculoB);
 
+        gravarterceiro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(VeiculoBActivity.this, "Gravado com Sucesso", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

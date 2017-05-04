@@ -18,7 +18,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_alignParentTop="true"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:id="@+id/linaerImage">
 
         <ProgressBar
             android:layout_alignParentBottom="true"

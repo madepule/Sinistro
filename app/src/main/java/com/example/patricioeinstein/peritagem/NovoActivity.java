@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -66,6 +67,13 @@ public class NovoActivity extends AppCompatActivity  {
         btnsubmeter = (Button) findViewById(R.id.btnEnviarPart);
        // btnsubmeter.setVisibility(View.INVISIBLE);
         progressBar = (ProgressBar) findViewById(R.id.snackbarp);
+
+        btnsubmeter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(NovoActivity.this, "Enviado com Sucesso", Toast.LENGTH_LONG).show();
+            }
+        });
 
         }
 

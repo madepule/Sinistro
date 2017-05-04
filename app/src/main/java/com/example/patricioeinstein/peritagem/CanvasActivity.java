@@ -25,13 +25,13 @@ import java.io.IOException;
 public class CanvasActivity extends AppCompatActivity implements Firebase.CompletionListener {
 
     private CanvasView customCanvas;
-    private final int PICK_IMAGE_REQUEST = 1;
+    private final int PICK_IMAGE_REQUEST = 4;
     private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_troquis_main);
+        setContentView(R.layout.activity_croquis_main);
 
         Button btnImag = (Button) findViewById(R.id.uploadImagem);
 

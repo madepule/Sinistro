@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
@@ -57,6 +58,13 @@ public class DetalhesActivity extends AppCompatActivity  {
 
         btnsubmeter = (Button) findViewById(R.id.btngravardetalhes);
         progressBar = (ProgressBar) findViewById(R.id.snackbarp);
+
+        btnsubmeter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(DetalhesActivity.this, "Gravado com sucesso", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

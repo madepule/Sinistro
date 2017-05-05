@@ -35,11 +35,12 @@
         <activity
             android:name=".ResetActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".DetalhesActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".CanvasActivity" />
         <activity android:name=".HistoricoActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".DetalhesActivity" />
         <activity android:name=".VeiculoBActivity" />
         <activity android:name=".FotosActivity" />
         <activity android:name=".NovoActivity" />

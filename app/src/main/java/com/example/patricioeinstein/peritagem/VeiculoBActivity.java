@@ -59,6 +59,7 @@ public class VeiculoBActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Toast.makeText(VeiculoBActivity.this, "Gravado com Sucesso", Toast.LENGTH_SHORT).show();
+                VeiculoBActivity.this.finish();
             }
         });
     }

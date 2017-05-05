@@ -39,9 +39,12 @@ public class CanvasActivity extends AppCompatActivity implements Firebase.Comple
         btngravar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CanvasActivity.this, "Gravado com sucesso", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CanvasActivity.this, "Gravado com sucesso", Toast.LENGTH_LONG).show();
+
+                CanvasActivity.this.finish();
             }
         });
+
 
         btnImag.setOnClickListener(new View.OnClickListener()
         {

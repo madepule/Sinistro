@@ -25,6 +25,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 
+
 //Implementar a interface Firebase.CompletionListener para o firebase devolver ou informar sobre o sucesso ou falha num evento na base de dados
 public class FotosActivity extends AppCompatActivity {
     //instanciar a classe connectFirebas
@@ -51,6 +52,7 @@ public class FotosActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_fotos2);
         Intent intent = getIntent();
         ut= (Utilizador) intent.getSerializableExtra("utilizador");
@@ -63,7 +65,9 @@ public class FotosActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(FotosActivity.this, "Gravado com sucesso!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FotosActivity.this, "Gravado com sucesso!", Toast.LENGTH_LONG).show();
+
+                FotosActivity.this.finish();
             }
         });
     }

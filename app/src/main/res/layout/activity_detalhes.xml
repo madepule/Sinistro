@@ -119,7 +119,7 @@
             android:ems="10"
             android:inputType="time"
             android:background="?attr/actionModeBackground"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/llocal"
@@ -144,7 +144,7 @@
             android:ems="10"
             android:focusable="false"
             android:background="?attr/actionModeBackground"
-            android:textSize="14sp"
+            android:textSize="16sp"
              />
 
         <TextView

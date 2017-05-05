@@ -105,7 +105,8 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
 
         // get the last know location from your location manager.
         if (ActivityCompat.checkSelfPermission(RegistroActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(RegistroActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(RegistroActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        {
             // Check Permissions Now
             ActivityCompat.requestPermissions(RegistroActivity.this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},

@@ -32,13 +32,13 @@
 
         <TextView
             android:text="__________"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView3"
             android:textColor="@android:color/black" />
         <TextView
             android:text="Selecione as fotos do sinistro"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView4"
             android:textSize="18sp"

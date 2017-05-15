@@ -56,5 +56,6 @@
     <string name="title_activity_remove_user">Remover Utilizador</string>
     <string name="title_activity_details_user">Detalhes da Conta</string>
     <string name="password_info">Para prosseguir com a atualização informe abaixo sua senha.</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>

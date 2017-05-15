@@ -23,7 +23,7 @@ import com.zfdang.multiple_images_selector.SelectorSettings;
 
 import java.io.File;
 import java.util.ArrayList;
-
+import java.util.Locale;
 
 
 //Implementar a interface Firebase.CompletionListener para o firebase devolver ou informar sobre o sucesso ou falha num evento na base de dados
@@ -74,11 +74,11 @@ public class FotosActivity extends AppCompatActivity {
 
     public View callSelectFotos(View view) {
         // start multiple photos selector
-        //Locale locale = new Locale("en", "US");
+        Locale locale = new Locale("pt", "pt");
         Resources res = getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
-        //conf.locale = locale;
+        conf.locale = locale;
         res.updateConfiguration(conf, dm);
 
         Intent intent = new Intent(FotosActivity.this, ImagesSelectorActivity.class);

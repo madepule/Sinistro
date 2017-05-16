@@ -592,6 +592,40 @@
             android:layout_marginEnd="0dp"
             >
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/linear"
+                android:layout_weight="1" />
+
+            <com.example.patricioeinstein.peritagem.CanvasView
+                android:id="@+id/signature_canvas"
+                android:layout_width="wrap_content"
+                android:layout_height="400dp"
+                android:textColor="#FFFFFF"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_above="@+id/linear" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="0dp"
+            android:layout_marginEnd="0dp"
+            >
+
             <Button
                 android:id="@+id/limpar"
                 android:layout_width="wrap_content"
@@ -623,35 +657,7 @@
                 android:textStyle="normal|bold"
                 />
         </LinearLayout>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/imageView"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/linear" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <HorizontalScrollView
-            android:id="@+id/scrollView2"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-        <com.example.patricioeinstein.peritagem.CanvasView
-            android:id="@+id/signature_canvas"
-            android:layout_height="match_parent"
-            android:textColor="#FFFFFF"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/linear"
-            android:layout_width="match_parent" />
-
-        </HorizontalScrollView>
-        </LinearLayout>
         <Button
             android:id="@+id/btngravardetalhes"
             android:layout_width="147dp"

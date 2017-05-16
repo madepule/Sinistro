@@ -46,12 +46,15 @@ public class CanvasView extends View {
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
+    w = 500;
+    h = 400;
+        super.onSizeChanged(500, h, oldw, oldh);
 
         // as canvas serao desenhadas dentros dos paramentros definidos no Bitmap
         mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         mCanvas = new Canvas(mBitmap);
     }
+
     public void addBitmap(Bitmap bitmap){
         mBitmap = bitmap;
     }

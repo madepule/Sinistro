@@ -24,6 +24,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -61,6 +62,7 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
     private CanvasView customCanvas;
     private final int PICK_IMAGE_REQUEST = 4;
     private ImageView imageView;
+    private ScrollView scrollview;
 
     public static Date getDateFromDatePicker(DatePicker datePicker) {
         int day = datePicker.getDayOfMonth();

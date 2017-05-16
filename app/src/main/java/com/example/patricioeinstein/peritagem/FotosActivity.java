@@ -11,8 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,8 +47,8 @@ public class FotosActivity extends AppCompatActivity {
     private  Utilizador ut;
     private static final int REQUEST_CODE = 123;
     private ArrayList<String> mResults = new ArrayList<>();
-
-
+    private GridView fotos;
+    ArrayList<ImageView> fotosselecionadas=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +58,7 @@ public class FotosActivity extends AppCompatActivity {
         ut= (Utilizador) intent.getSerializableExtra("utilizador");
         //Sinistro
         txtFotos = (TextView) findViewById(R.id.txtFotos);
+        fotos = (GridView) findViewById(R.id.fotosgrid);
         Fresco.initialize(getApplicationContext());
 
         Button gravarft = (Button) findViewById(R.id.btnGravarFotos);
@@ -74,7 +75,7 @@ public class FotosActivity extends AppCompatActivity {
 
     public View callSelectFotos(View view) {
         // start multiple photos selector
-        Locale locale = new Locale("pt", "pt");
+        Locale locale = new Locale("en", "US");
         Resources res = getResources();
         DisplayMetrics dm = res.getDisplayMetrics();
         Configuration conf = res.getConfiguration();
@@ -100,7 +101,7 @@ public class FotosActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // get selected images from selector
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.Imagelinear);
+      //  LinearLayout linearLayout = (LinearLayout) findViewById(R.id.Imagelinear);
 
         if(requestCode == REQUEST_CODE) {
             if(resultCode == RESULT_OK) {
@@ -122,10 +123,14 @@ public class FotosActivity extends AppCompatActivity {
                     //sb.append(result).append("\n");
 
                     image.setImageURI(Uri.fromFile(new File(result)));
-                    linearLayout.addView(image);
+                    fotosselecionadas.add(image);
+                   // linearLayout.setGravity(Gravity.CENTER_VERTICAL | Gravity.TOP);
+                   // linearLayout.addView(image);
                     //customCanvas.addBitmap(image);
                 }
                 txtFotos.setText(sb.toString());
+                MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
+                fotos.setAdapter(myAdapter);
             }
         }
         customCanvas = (CanvasView) findViewById(R.id.signature_canvas);

@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.location.Location;
@@ -17,21 +19,29 @@ import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.firebase.auth.FirebaseAuth;
+import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
+import com.zfdang.multiple_images_selector.SelectorSettings;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -63,6 +73,15 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
     private final int PICK_IMAGE_REQUEST = 4;
     private ImageView imageView;
     private ScrollView scrollview;
+//fotos
+    private  int i =0;
+    private TextView txtFotos;
+    private static final int REQUEST_CODE = 123;
+    private ArrayList<String> mResults = new ArrayList<>();
+    private GridView fotos;
+    ArrayList<ImageView> fotosselecionadas=new ArrayList<>();
+
+//fotoss
 
     public static Date getDateFromDatePicker(DatePicker datePicker) {
         int day = datePicker.getDayOfMonth();
@@ -88,6 +107,9 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
 
         btnsubmeter = (Button) findViewById(R.id.btngravardetalhes);
         progressBar = (ProgressBar) findViewById(R.id.snackbarp);
+        txtFotos = (TextView) findViewById(R.id.txtFotos);
+        fotos = (GridView) findViewById(R.id.fotosgrid);
+        Fresco.initialize(getApplicationContext());
 
         btnsubmeter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,17 +171,6 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
 
         Button btnImag = (Button) findViewById(R.id.uploadImagem);
 
-        Button btngravar = (Button) findViewById(R.id.gravar);
-        btngravar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(DetalhesActivity.this, "Gravado com sucesso", Toast.LENGTH_LONG).show();
-
-                DetalhesActivity.this.finish();
-            }
-        });
-
-
         btnImag.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -189,6 +200,31 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
 
     }
 
+    public View callSelectFotos(View view) {
+        // start multiple photos selector
+        Locale locale = new Locale("en", "US");
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.locale = locale;
+        res.updateConfiguration(conf, dm);
+
+        Intent intent = new Intent(DetalhesActivity.this, ImagesSelectorActivity.class);
+        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        intent.setAction((Intent.ACTION_GET_CONTENT));
+// max number of images to be selected
+        intent.putExtra(SelectorSettings.SELECTOR_MAX_IMAGE_NUMBER, 10);
+// min size of image which will be shown; to filter tiny images (mainly icons)
+        intent.putExtra(SelectorSettings.SELECTOR_MIN_IMAGE_SIZE, 100000);
+// show camera or not
+        //intent.putExtra(SelectorSettings.SELECTOR_SHOW_CAMERA, true);
+// pass current selected images as the initial value
+        intent.putStringArrayListExtra(SelectorSettings.SELECTOR_INITIAL_SELECTED_LIST, mResults);
+// start the selector
+        startActivityForResult(intent, REQUEST_CODE);
+        return  view;
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -209,12 +245,46 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
                 e.printStackTrace();
             }
         }
+
+        if(requestCode == REQUEST_CODE) {
+            if(resultCode == RESULT_OK) {
+                mResults = data.getStringArrayListExtra(SelectorSettings.SELECTOR_RESULTS);
+                assert mResults != null;
+
+                // show results in textview
+                StringBuffer sb = new StringBuffer();
+                sb.append(String.format("Foram Selecionadas %d fotos:", mResults.size())).append("\n");
+                for(String result : mResults) {
+                    i = i+1;
+                    //ImageView imageView = new ImageView(this);
+
+                    ImageView image = new ImageView(this);
+                    image.setLayoutParams(new android.view.ViewGroup.LayoutParams(500,400));
+                    image.setAdjustViewBounds(true);
+                    //image.setMaxHeight(500);
+                   // image.setMaxWidth(500);
+
+                    //sb.append(result).append("\n");
+
+                    image.setImageURI(Uri.fromFile(new File(result)));
+                    fotosselecionadas.add(image);
+                    // linearLayout.setGravity(Gravity.CENTER_VERTICAL | Gravity.TOP);
+                    // linearLayout.addView(image);
+                    //customCanvas.addBitmap(image);
+                }
+                txtFotos.setText(sb.toString());
+                MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
+                fotos.setAdapter(myAdapter);
+            }
+        }
+
+        customCanvas = (CanvasView) findViewById(R.id.signature_canvas);
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     public void limparTela(View v) {
         customCanvas.clearCanvas();
     }
-
     private Location getLocation() {
 
         try {
@@ -333,6 +403,5 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
     public void onProviderDisabled(String provider) {
 
     }
-
 
 }

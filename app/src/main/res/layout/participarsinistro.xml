@@ -592,8 +592,8 @@
             android:layout_marginEnd="0dp"
             >
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="500dp"
+                android:layout_height="600dp"
                 android:id="@+id/imageView"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -603,7 +603,7 @@
             <com.example.patricioeinstein.peritagem.CanvasView
                 android:id="@+id/signature_canvas"
                 android:layout_width="wrap_content"
-                android:layout_height="400dp"
+                android:layout_height="600dp"
                 android:textColor="#FFFFFF"
                 android:focusable="true"
                 android:layout_alignParentTop="true"
@@ -637,7 +637,6 @@
                 android:textStyle="normal|bold"
                 android:onClick="limparTela"/>
 
-
             <Button
                 android:id="@+id/uploadImagem"
                 android:layout_width="wrap_content"
@@ -648,16 +647,75 @@
                 android:textStyle="normal|bold"
                 android:onClick="limparTela"/>
 
-            <Button
-                android:id="@+id/gravar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gravar"
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
-                android:theme="@style/btnRed"
-                android:textStyle="normal|bold"
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt"
+            android:text="___________________"
+            android:textStyle="normal|bold"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/selecionafotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecione as fotos do sinistro"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_below="@+id/textView7" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView9" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/txtFotos"
+            android:textStyle="normal|italic"
+            android:background="@color/shadowColor"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/linearfotos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="0dp"
+            android:layout_marginEnd="0dp">
+
+            <GridView
+                android:layout_width="match_parent"
+                android:layout_height="560dp"
+                android:id="@+id/fotosgrid"
+                android:layout_below="@+id/btnGravarFotos"
+                android:numColumns="2"
+                android:stretchMode="columnWidth"
+                android:layout_margin="5dp"
+                android:verticalSpacing="3dp"
+                android:horizontalSpacing="3dp"
                 />
         </LinearLayout>
+
+        <Button
+            android:text="Selecionar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSelecionarFotos"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:theme="@style/btngreen"
+            android:textStyle="normal|bold"
+            android:onClick="callSelectFotos"
+            android:layout_below="@+id/detalhesdoterceiro"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <Button
             android:id="@+id/btngravardetalhes"
@@ -668,9 +726,8 @@
             android:textStyle="normal|bold"
             android:text="Gravar"
             android:layout_gravity="center"
+
             />
     </LinearLayout>
-
-
 
 </com.example.patricioeinstein.peritagem.CustomScrollView>

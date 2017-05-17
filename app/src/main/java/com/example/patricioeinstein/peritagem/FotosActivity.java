@@ -49,6 +49,8 @@ public class FotosActivity extends AppCompatActivity {
     private ArrayList<String> mResults = new ArrayList<>();
     private GridView fotos;
     ArrayList<ImageView> fotosselecionadas=new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,7 +88,7 @@ public class FotosActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         intent.setAction((Intent.ACTION_GET_CONTENT));
 // max number of images to be selected
-        intent.putExtra(SelectorSettings.SELECTOR_MAX_IMAGE_NUMBER, 100);
+        intent.putExtra(SelectorSettings.SELECTOR_MAX_IMAGE_NUMBER, 10);
 // min size of image which will be shown; to filter tiny images (mainly icons)
         intent.putExtra(SelectorSettings.SELECTOR_MIN_IMAGE_SIZE, 100000);
 // show camera or not

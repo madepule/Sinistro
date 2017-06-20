@@ -420,16 +420,6 @@
             android:text="Matricula da Viatura do Terceiro:"
             />
 
-        <EditText
-            android:id="@+id/matricula"
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
-            android:background="?attr/actionModeBackground"
-            android:textSize="14sp" />
-
         <TextView
             android:id="@+id/nomeouto"
             android:textSize="14dp"
@@ -441,6 +431,16 @@
             android:layout_below="@+id/hhora"
             android:text="Nome do Outro Condutor:"
             />
+
+        <EditText
+            android:id="@+id/matricula"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/nnome"
+            android:ems="10"
+            android:background="?attr/actionModeBackground"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/nomeoutrocond"
@@ -584,26 +584,27 @@
             android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.63"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginRight="0dp"
-            android:layout_marginEnd="0dp"
-            >
+            android:layout_marginEnd="0dp">
+
             <ImageView
-                android:layout_width="500dp"
-                android:layout_height="600dp"
+                android:layout_width="wrap_content"
+                android:layout_height="500dp"
                 android:id="@+id/imageView"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_above="@+id/linear"
                 android:layout_weight="1" />
+
             <com.example.patricioeinstein.peritagem.CanvasView
                 android:id="@+id/signature_canvas"
                 android:layout_width="wrap_content"
-                android:layout_height="600dp"
+                android:layout_height="500dp"
                 android:textColor="#FFFFFF"
                 android:focusable="true"
                 android:layout_alignParentTop="true"
@@ -634,16 +635,6 @@
                 android:text=" Limpar a Tela "
                 android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:theme="@style/btnRed"
-                android:textStyle="normal|bold"
-                android:onClick="limparTela"/>
-
-            <Button
-                android:id="@+id/uploadImagem"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" Upload "
-                android:textColor="@color/common_google_signin_btn_text_dark_default"
-                android:theme="@style/btngreen"
                 android:textStyle="normal|bold"
                 android:onClick="limparTela"/>
 
@@ -692,25 +683,30 @@
             android:layout_marginEnd="0dp">
 
             <GridView
-                android:layout_width="match_parent"
-                android:layout_height="560dp"
+                android:layout_width="fill_parent"
+                android:layout_height="395dp"
                 android:id="@+id/fotosgrid"
                 android:layout_below="@+id/btnGravarFotos"
                 android:numColumns="2"
                 android:stretchMode="columnWidth"
-                android:layout_margin="5dp"
+                android:columnWidth="150dp"
                 android:verticalSpacing="3dp"
-                android:horizontalSpacing="3dp"
+                android:horizontalSpacing="5dp"
+                android:gravity="center"
+                android:drawSelectorOnTop="true"
+                android:focusable="true"
+                android:clickable="true"
+
                 />
         </LinearLayout>
 
         <Button
-            android:text="Selecionar"
+            android:text="Selecionar Imagem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btnSelecionarFotos"
             android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:theme="@style/btngreen"
+            android:theme="@style/btnRed"
             android:textStyle="normal|bold"
             android:onClick="callSelectFotos"
             android:layout_below="@+id/detalhesdoterceiro"

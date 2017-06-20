@@ -13,7 +13,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
@@ -34,7 +33,7 @@ import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.firebase.auth.FirebaseAuth;
-import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
+//import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
 import com.zfdang.multiple_images_selector.SelectorSettings;
 
 import java.io.File;
@@ -168,7 +167,7 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
                 }
             }
         }
-
+/*
         Button btnImag = (Button) findViewById(R.id.uploadImagem);
 
         btnImag.setOnClickListener(new View.OnClickListener()
@@ -195,11 +194,11 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
 
             }
         });
-
+*/
         customCanvas = (CanvasView) findViewById(R.id.signature_canvas);
 
     }
-
+//Chamado para selecionar imagens
     public View callSelectFotos(View view) {
         // start multiple photos selector
         Locale locale = new Locale("en", "US");
@@ -210,14 +209,15 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         res.updateConfiguration(conf, dm);
 
         Intent intent = new Intent(DetalhesActivity.this, ImagesSelectorActivity.class);
+
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         intent.setAction((Intent.ACTION_GET_CONTENT));
 // max number of images to be selected
         intent.putExtra(SelectorSettings.SELECTOR_MAX_IMAGE_NUMBER, 10);
 // min size of image which will be shown; to filter tiny images (mainly icons)
-        intent.putExtra(SelectorSettings.SELECTOR_MIN_IMAGE_SIZE, 100000);
+        intent.putExtra(SelectorSettings.SELECTOR_MIN_IMAGE_SIZE, 10);
 // show camera or not
-        //intent.putExtra(SelectorSettings.SELECTOR_SHOW_CAMERA, true);
+        intent.putExtra(SelectorSettings.SELECTOR_SHOW_CAMERA, true);
 // pass current selected images as the initial value
         intent.putStringArrayListExtra(SelectorSettings.SELECTOR_INITIAL_SELECTED_LIST, mResults);
 // start the selector
@@ -245,7 +245,7 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
                 e.printStackTrace();
             }
         }
-
+//selecionar multiplas imagens
         if(requestCode == REQUEST_CODE) {
             if(resultCode == RESULT_OK) {
                 mResults = data.getStringArrayListExtra(SelectorSettings.SELECTOR_RESULTS);
@@ -260,17 +260,14 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
 
                     ImageView image = new ImageView(this);
                     image.setLayoutParams(new android.view.ViewGroup.LayoutParams(500,400));
-                    image.setAdjustViewBounds(true);
-                    //image.setMaxHeight(500);
-                   // image.setMaxWidth(500);
-
-                    //sb.append(result).append("\n");
+                    image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                    image.setPadding(4,4,4,4);
+                    image.getMaxWidth();
+                    image.getMaxHeight();
 
                     image.setImageURI(Uri.fromFile(new File(result)));
                     fotosselecionadas.add(image);
-                    // linearLayout.setGravity(Gravity.CENTER_VERTICAL | Gravity.TOP);
-                    // linearLayout.addView(image);
-                    //customCanvas.addBitmap(image);
+
                 }
                 txtFotos.setText(sb.toString());
                 MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
@@ -281,10 +278,12 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         customCanvas = (CanvasView) findViewById(R.id.signature_canvas);
         super.onActivityResult(requestCode, resultCode, data);
     }
-
+//limpar a tela de Canvas
     public void limparTela(View v) {
         customCanvas.clearCanvas();
     }
+
+ //puxar as coordenadas geograficas automaticamente
     private Location getLocation() {
 
         try {
@@ -305,7 +304,7 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
                         .show();
             } else {
                 this.canGetLocation = true;
-                // First get location from Network Provider
+                // First get location from Network
                 if (checkNetwork) {
                     try {
                         locationManager.requestLocationUpdates(

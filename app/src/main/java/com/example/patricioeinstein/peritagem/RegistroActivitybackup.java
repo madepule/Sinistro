@@ -105,7 +105,8 @@ public class RegistroActivitybackup extends AppCompatActivity implements Firebas
 
         // get the last know location from your location manager.
         if (ActivityCompat.checkSelfPermission(RegistroActivitybackup.this, android.Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(RegistroActivitybackup.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(RegistroActivitybackup.this,
+                android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
         {
             // Check Permissions Now
             ActivityCompat.requestPermissions(RegistroActivitybackup.this,

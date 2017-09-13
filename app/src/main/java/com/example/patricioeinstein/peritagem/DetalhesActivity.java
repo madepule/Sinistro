@@ -8,12 +8,14 @@ import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -33,7 +35,7 @@ import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.firebase.auth.FirebaseAuth;
-//import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
+import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
 import com.zfdang.multiple_images_selector.SelectorSettings;
 
 import java.io.File;
@@ -58,6 +60,8 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
     boolean checkGPS = false;
     boolean checkNetwork = false;
     boolean canGetLocation = false;
+    private Button btnfotos;
+    public  View view;
     Location loc;
     private EditText txtlocal;
     private EditText txtdata;
@@ -70,8 +74,10 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
     private  Utilizador ut;
     private CanvasView customCanvas;
     private final int PICK_IMAGE_REQUEST = 4;
+    private final int REQUEST_IMAGE_CAPTURE = 10;
     private ImageView imageView;
     private ScrollView scrollview;
+    static String currentPhoto;
 //fotos
     private  int i =0;
     private TextView txtFotos;
@@ -109,6 +115,40 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         txtFotos = (TextView) findViewById(R.id.txtFotos);
         fotos = (GridView) findViewById(R.id.fotosgrid);
         Fresco.initialize(getApplicationContext());
+
+        btnfotos = (Button) findViewById(R.id.btnSelecionarFotos);
+
+        btnfotos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(final View v) {
+              final CharSequence [] items = {"CAMERA","GALERIA","CANCELAR"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(DetalhesActivity.this);
+                builder.setTitle("Adiciona Fotos");
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int escolher) {
+                        if (items[escolher]=="CAMERA")
+
+                        {
+                            tirarfoto ();
+
+                        }
+
+                        else if (items[escolher]=="GALERIA")
+                        {
+                            callSelectFotos(view);
+
+                        }
+
+                        else if (items[escolher].equals("CANCELAR")){
+                            dialog.dismiss();
+                        }
+                    }
+                });
+                //permite visualizar a tela de dialogo
+                builder.show();
+            }
+        });
 
         btnsubmeter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,34 +207,7 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
                 }
             }
         }
-/*
-        Button btnImag = (Button) findViewById(R.id.uploadImagem);
 
-        btnImag.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                if(Build.VERSION.SDK_INT <19){
-
-                    Intent intent = new Intent();
-                    intent.setType("image/*");
-                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                    intent.setAction(Intent.ACTION_GET_CONTENT);
-                    startActivityForResult(Intent.createChooser(intent,"Selecciona a Imagem" ), PICK_IMAGE_REQUEST);
-                }
-                else {
-                    Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                    intent.addCategory(Intent.CATEGORY_OPENABLE);
-                    intent.setType("image/*");
-                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                    intent.setAction(Intent.ACTION_GET_CONTENT);
-                    startActivityForResult(Intent.createChooser(intent,"Selecciona a Imagem" ), PICK_IMAGE_REQUEST);
-
-                }
-
-            }
-        });
-*/
         customCanvas = (CanvasView) findViewById(R.id.signature_canvas);
 
     }
@@ -211,19 +224,44 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         Intent intent = new Intent(DetalhesActivity.this, ImagesSelectorActivity.class);
 
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+        intent.setType("Image/*");
         intent.setAction((Intent.ACTION_GET_CONTENT));
 // max number of images to be selected
         intent.putExtra(SelectorSettings.SELECTOR_MAX_IMAGE_NUMBER, 10);
 // min size of image which will be shown; to filter tiny images (mainly icons)
         intent.putExtra(SelectorSettings.SELECTOR_MIN_IMAGE_SIZE, 10);
 // show camera or not
-        intent.putExtra(SelectorSettings.SELECTOR_SHOW_CAMERA, true);
+        intent.putExtra(SelectorSettings.SELECTOR_SHOW_CAMERA, false);
 // pass current selected images as the initial value
         intent.putStringArrayListExtra(SelectorSettings.SELECTOR_INITIAL_SELECTED_LIST, mResults);
 // start the selector
-        startActivityForResult(intent, REQUEST_CODE);
+       startActivityForResult(Intent.createChooser(intent,"seleciona"), REQUEST_CODE);
+
         return  view;
     }
+
+private void tirarfoto (){
+    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    if (intent.resolveActivity(getPackageManager()) !=null){
+        File file = null;
+
+       try {
+           File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+           file = File.createTempFile("PHOTO",".jpg",storageDir);
+           currentPhoto = "file:" + file.getAbsolutePath();
+       }
+       catch (IOException e)
+       {
+           Toast.makeText(getApplicationContext(),"Erro: "+ e.getMessage(), Toast.LENGTH_SHORT).show();
+       }
+
+        if (file !=null)
+        {
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+            startActivityForResult(intent,REQUEST_IMAGE_CAPTURE);
+        }
+    }
+}
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -244,6 +282,25 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        else if(requestCode==REQUEST_IMAGE_CAPTURE && resultCode==RESULT_OK){
+            try {
+                for (String result :mResults){
+                    i = i+1;
+                    Bitmap btp = BitmapFactory.decodeStream(getContentResolver().openInputStream(Uri.parse(currentPhoto)));
+                    ImageView imgv = (ImageView) findViewById(R.id.imageView);
+                    imgv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                    imgv.setImageURI(Uri.fromFile(new File(result)));
+                    imgv.setImageBitmap(btp);
+                    fotosselecionadas.add(imgv);
+                }
+            }
+            catch (FileNotFoundException fnex){
+                Toast.makeText(getApplicationContext(),"Foto nao encontrada",Toast.LENGTH_SHORT).show();
+
+            }
+            MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
+            fotos.setAdapter(myAdapter);
         }
 //selecionar multiplas imagens
         if(requestCode == REQUEST_CODE) {
@@ -267,14 +324,12 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
 
                     image.setImageURI(Uri.fromFile(new File(result)));
                     fotosselecionadas.add(image);
-
                 }
                 txtFotos.setText(sb.toString());
                 MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
                 fotos.setAdapter(myAdapter);
             }
         }
-
         customCanvas = (CanvasView) findViewById(R.id.signature_canvas);
         super.onActivityResult(requestCode, resultCode, data);
     }
@@ -382,25 +437,20 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         return latitude;
     }
 
-
     @Override
     public void onLocationChanged(Location location) {
-
-    }
+   }
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-
     }
 
     @Override
     public void onProviderEnabled(String provider) {
-
     }
 
     @Override
     public void onProviderDisabled(String provider) {
-
     }
 
 }

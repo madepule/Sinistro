@@ -12,8 +12,6 @@
     tools:context="com.example.patricioeinstein.peritagem.FotosActivity"
     android:elevation="0dp">
 
-
-
         <ProgressBar
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -42,7 +40,6 @@
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:layout_below="@+id/textView7" />
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -54,7 +51,6 @@
             android:textStyle="normal|italic"
             android:background="@color/shadowColor"
             android:layout_height="wrap_content" />
-
 
             <GridView
                 android:layout_width="match_parent"
@@ -68,7 +64,6 @@
                 android:verticalSpacing="5dp"
                 android:horizontalSpacing="5dp"
                 />
-
     <Button
         android:text="Selecionar"
         android:layout_width="wrap_content"
@@ -109,4 +104,3 @@
         android:layout_toEndOf="@+id/button3"
         android:layout_below="@+id/btnSelecionarFotos" />
 </RelativeLayout>
-

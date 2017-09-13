@@ -71,6 +71,7 @@ public class RegistroActivity extends AppCompatActivity implements Firebase.Comp
     private static final long MIN_TIME_BW_UPDATES = 1000 * 60 * 1;
     protected LocationManager locationManager;
     private  Utilizador ut;
+
     public static java.util.Date getDateFromDatePicker(DatePicker datePicker) {
         int day = datePicker.getDayOfMonth();
         int month = datePicker.getMonth();

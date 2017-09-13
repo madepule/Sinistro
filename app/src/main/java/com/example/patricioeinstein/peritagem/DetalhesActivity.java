@@ -297,7 +297,7 @@ private void tirarfoto (){
             }
             catch (FileNotFoundException fnex){
                 Toast.makeText(getApplicationContext(),"Foto nao encontrada",Toast.LENGTH_SHORT).show();
-
+//kkkkk
             }
             MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
             fotos.setAdapter(myAdapter);

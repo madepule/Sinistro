@@ -39,13 +39,12 @@
             android:layout_weight="0.18" />
 
         <TextView
-            android:text="__________"
+            android:text="_______________"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView3"
-            android:textColor="@android:color/black" />
-
-
+            android:textColor="@android:color/black"
+            android:layout_weight="0.11" />
 
 
         <TextView
@@ -58,17 +57,13 @@
             />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView6" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView7"
             android:text="___________________"
             android:textStyle="normal|bold"
             android:textColor="@android:color/black" />
+
         <TextView
             android:text="Preencha os dados do sinistro antes de enviar a participacao"
             android:layout_width="wrap_content"

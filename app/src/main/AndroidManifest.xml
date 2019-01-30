@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
-        android:name="android.support.multidex.MultiDexApplication"
+
         android:allowBackup="true"
         android:icon="@mipmap/emose"
         android:label="@string/app_name"
@@ -47,8 +47,10 @@
         <activity android:name=".VeiculoBActivity" />
         <activity android:name=".FotosActivity" />
         <activity android:name=".NovoActivity" />
+
         <activity
             android:name="com.zfdang.multiple_images_selector.ImagesSelectorActivity"
+            android:hardwareAccelerated="false"
             android:configChanges="orientation|screenSize" />
 
         <meta-data

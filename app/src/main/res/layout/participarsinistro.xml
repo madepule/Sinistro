@@ -49,7 +49,6 @@
             android:id="@+id/textView5" />
 
         <TextView
-
             android:id="@+id/nnome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,7 +106,7 @@
             />
 
         <EditText
-            android:id="@+id/dataa"
+            android:id="@+id/editdatahora"
             android:layout_width="match_parent"
             android:layout_height="28dp"
             android:focusable="true"
@@ -130,7 +129,7 @@
             />
 
         <EditText
-            android:id="@+id/local"
+            android:id="@+id/editlocalsinistro"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_alignBaseline="@+id/llocal"

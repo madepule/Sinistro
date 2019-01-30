@@ -47,16 +47,13 @@
             android:textColor="@android:color/black" />
 
 
-
-
         <TextView
-            android:text="NOVA PARTICIPAÇÂO"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
+            android:text="NOVA PARTICIPAÇÂO"
             android:textColor="@android:color/black"
-            android:textSize="40sp"
-            />
+            android:textSize="40sp" />
 
         <TextView
             android:layout_width="match_parent"

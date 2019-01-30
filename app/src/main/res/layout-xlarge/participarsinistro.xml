@@ -14,16 +14,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_alignParentTop="true"
+        android:orientation="vertical"
         android:weightSum="1">
 
         <ProgressBar
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
             android:id="@+id/snackbarp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="8dp"
             android:visibility="gone" />
 
@@ -31,23 +31,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="___________________"
-            android:textStyle="normal|bold"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textStyle="normal|bold" />
+
         <TextView
             android:id="@+id/detalhes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Detalhes do Acidente"
             android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            android:text="Detalhes do Acidente"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
 
-        />
 
         <TextView
+            android:id="@+id/textView5"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView5" />
+            android:layout_height="wrap_content" />
 
         <TextView
 
@@ -59,8 +59,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="Nome do Segurado:"
-            android:textSize="14dp"
-            android:textColor="#FF0000" />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/nome"
@@ -68,14 +68,12 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/aapolice"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/nome"
@@ -83,7 +81,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="Número de Apólice:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/Apolice"
@@ -91,44 +90,42 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/datasinistro"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/nome"
             android:text="Data e Hora do Sinistro:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/dataa"
             android:layout_width="match_parent"
             android:layout_height="28dp"
-            android:focusable="true"
+            android:background="?attr/actionModeBackground"
             android:editable="true"
             android:ems="10"
+            android:focusable="true"
             android:inputType="time"
-            android:background="?attr/actionModeBackground"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/llocal"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Localização em Coordenadas GPS:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/local"
@@ -138,23 +135,21 @@
             android:layout_alignBottom="@+id/llocal"
             android:layout_alignLeft="@+id/hora"
             android:layout_alignStart="@+id/hora"
+            android:background="?attr/actionModeBackground"
             android:ems="10"
             android:focusable="false"
-            android:background="?attr/actionModeBackground"
-            android:textSize="16sp"
-            />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/ruaa"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Rua/Avenida:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/rua"
@@ -162,21 +157,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/provinciaa"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Província:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/provincia"
@@ -184,21 +178,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/cidadee"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Cidade:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/cidade"
@@ -206,21 +199,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/velocisegurado"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Velocidade do Segurado:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/velocidadesegurado"
@@ -228,21 +220,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/velociterceiro"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Velocidade do Terceiro:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/velocidadeterceiro"
@@ -250,8 +241,8 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
 
@@ -259,35 +250,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="___________________"
-            android:textStyle="normal|bold"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:textStyle="normal|bold" />
 
         <TextView
             android:id="@+id/detalhesdoterceiro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Detalhes do veículo Terceiro e Condutor"
             android:layout_gravity="center"
-            android:textSize="18sp"
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            android:text="Detalhes do veículo Terceiro e Condutor"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="18sp" />
 
 
         <TextView
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView8" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/nomep"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Nome do Propietário:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/nometerceiro"
@@ -295,21 +285,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/enderecoprop"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Endereço do Propietário:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/enderecoproprietario"
@@ -317,21 +306,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/tefefonep"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Telefone do Proprietário:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/telefoneproprietario"
@@ -339,21 +327,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/marcav"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Marca do Veículo:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/marcaveiculo"
@@ -361,21 +348,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/modeloan"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Modelo e Ano:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/modeloano"
@@ -383,21 +369,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/corr"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Cor:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/cor"
@@ -405,21 +390,20 @@
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/matriculaSegurado"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Matricula da Viatura do Terceiro:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/matricula"
@@ -427,21 +411,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/nomeouto"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Nome do Outro Condutor:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/nomeoutrocond"
@@ -449,21 +432,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/enderecoter"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Endereço do outro Condutor :"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/enderecoterceiro"
@@ -471,21 +453,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/telefoneter"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Telefone do Terceiro:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/telefoneterceiro"
@@ -493,21 +474,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
+            android:ems="10"
             android:textSize="14sp" />
 
         <TextView
             android:id="@+id/contactosegurad"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Contacto da Seguradora:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/contactoseguradora"
@@ -515,21 +495,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="14sp"/>
+            android:ems="10"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/enderecosegurad"
-            android:textSize="14dp"
-            android:textColor="#FF0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Endereço da Seguradora:"
-            />
+            android:textColor="#FF0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/enderecoseguradora"
@@ -537,21 +516,20 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="14sp"/>
+            android:ems="10"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/empresasegurad"
-            android:textSize="14dp"
-            android:textColor="#ff0000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/hhora"
             android:text="Empresa Seguradora dos Veículos:"
-            />
+            android:textColor="#ff0000"
+            android:textSize="14dp" />
 
         <EditText
             android:id="@+id/empresaseguradora"
@@ -559,20 +537,19 @@
             android:layout_height="28dp"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/nnome"
-            android:ems="10"
             android:background="?attr/actionModeBackground"
-            android:textSize="14sp"/>
+            android:ems="10"
+            android:textSize="14sp" />
 
         <Button
             android:id="@+id/btngravardetalhes"
             android:layout_width="147dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:theme="@style/btnRed"
-            android:textStyle="normal|bold"
-            android:text="Gravar"
             android:layout_gravity="center"
-            />
+            android:text="Gravar"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textStyle="normal|bold"
+            android:theme="@style/btnRed" />
     </LinearLayout>
 
 

@@ -25,7 +25,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:background="#31ffffff"
             android:weightSum="1">
 
@@ -33,13 +33,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Bem Vindo"
+                android:text="@string/bem_vindo"
                 android:id="@+id/textView"
                 android:layout_alignParentTop="true"
 
                 android:textColor="#ff3d3d"
                 android:textStyle="bold|italic"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
@@ -48,10 +48,8 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:id="@+id/txtNomeUt"
                 android:textColor="#277123"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
                 android:textStyle="bold|italic"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:layout_gravity="center_horizontal" />
 
             <Button
@@ -62,14 +60,13 @@
                 android:textColor="#000000"
                 android:background="@mipmap/registro"
                 android:layout_marginTop="10dp"
-                android:layout_alignTop="@+id/menuItens"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Registrar Ocorrência"
+                android:text="@string/registrar_ocorr_ncia"
                 android:id="@+id/textView9"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold|italic"
@@ -88,14 +85,13 @@
                 android:background="@mipmap/acident"
                 android:textColor="#000000"
                 android:textAlignment="inherit"
-                android:layout_alignTop="@+id/btnRegistro"
                 android:layout_gravity="center_horizontal" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Histórico de Ocorrências"
+                android:text="@string/hist_rico_de_ocorr_ncias"
                 android:id="@+id/textView10"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="bold|italic"

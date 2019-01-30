@@ -1,5 +1,6 @@
 package com.example.patricioeinstein.peritagem;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,11 +15,14 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -106,8 +110,11 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         Intent intent = getIntent();
         ut= (Utilizador) intent.getSerializableExtra("utilizador");
 
-        txtlocal = (EditText) findViewById(R.id.local);
-        txtdata = (EditText) findViewById(R.id.dataa);
+        StrictMode.VmPolicy.Builder builderr = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builderr.build());
+
+        txtlocal = (EditText) findViewById(R.id.editlocalsinistro);
+        txtdata = (EditText) findViewById(R.id.editdatahora);
         //txtnome = (EditText) findViewById(R.id.nome);
 
         btnsubmeter = (Button) findViewById(R.id.btngravardetalhes);
@@ -211,8 +218,10 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         customCanvas = (CanvasView) findViewById(R.id.signature_canvas);
 
     }
-//Chamado para selecionar imagens
+
+//Metodos para selecionar imagens
     public View callSelectFotos(View view) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
         // start multiple photos selector
         Locale locale = new Locale("en", "US");
         Resources res = getResources();
@@ -222,6 +231,7 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         res.updateConfiguration(conf, dm);
 
         Intent intent = new Intent(DetalhesActivity.this, ImagesSelectorActivity.class);
+        //Intent intent = new Intent();
 
         intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
         intent.setType("Image/*");
@@ -235,32 +245,36 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
 // pass current selected images as the initial value
         intent.putStringArrayListExtra(SelectorSettings.SELECTOR_INITIAL_SELECTED_LIST, mResults);
 // start the selector
-       startActivityForResult(Intent.createChooser(intent,"seleciona"), REQUEST_CODE);
+        startActivityForResult(intent, REQUEST_CODE);
 
-        return  view;
     }
+        return view;
+    }
+//Metodo que tira Fotos usando CAMERA
+private void tirarfoto () {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
-private void tirarfoto (){
     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-    if (intent.resolveActivity(getPackageManager()) !=null){
+    if (intent.resolveActivity(getPackageManager()) != null) {
         File file = null;
 
-       try {
-           File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-           file = File.createTempFile("PHOTO",".jpg",storageDir);
-           currentPhoto = "file:" + file.getAbsolutePath();
-       }
-       catch (IOException e)
-       {
-           Toast.makeText(getApplicationContext(),"Erro: "+ e.getMessage(), Toast.LENGTH_SHORT).show();
-       }
+        try {
+            File storageDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+            file = File.createTempFile("PHOTO", ".jpg", storageDir);
+            currentPhoto = "file:" + file.getAbsolutePath();
+        } catch (IOException e) {
+            Toast.makeText(getApplicationContext(), "Erro: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
 
-        if (file !=null)
-        {
+        if (file != null) {
             intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
-            startActivityForResult(intent,REQUEST_IMAGE_CAPTURE);
+            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
         }
     }
+    }
+}
+public class GenericFileProvider extends FileProvider{
+
 }
 
     @Override
@@ -304,7 +318,7 @@ private void tirarfoto (){
         }
 //selecionar multiplas imagens
         if(requestCode == REQUEST_CODE) {
-            if(resultCode == RESULT_OK) {
+            if(resultCode == Activity.RESULT_OK) {
                 mResults = data.getStringArrayListExtra(SelectorSettings.SELECTOR_RESULTS);
                 assert mResults != null;
 

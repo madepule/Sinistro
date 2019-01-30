@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -81,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
                 }
             }
         };
+
         txtNomeUt = (TextView) findViewById(R.id.txtNomeUt);
         mAuth = FirebaseAuth.getInstance();
         mAuth.addAuthStateListener(authStateListener);
@@ -92,12 +94,12 @@ public class MainActivity extends AppCompatActivity implements ValueEventListene
         progressDialog.setIndeterminate(true);
         progressDialog.show();
         progressDialog.setCancelable(false);
-        progressBar = (ProgressBar) findViewById(R.id.progressMain);
 
+        progressBar = (ProgressBar) findViewById(R.id.progressMain);
         btnRegistro = (Button) findViewById(R.id.btnRegistro);
-        btnHistorico = (Button) findViewById(R.id.btnHistorico);
-        btnHistorico.setEnabled(false);
-        btnRegistro.setEnabled(false);
+       btnHistorico = (Button) findViewById(R.id.btnHistorico);
+        //btnHistorico.setEnabled(false);
+        //btnRegistro.setEnabled(false);
         progressDialog.setOnDismissListener(new ProgressDialog.OnDismissListener(){
             @Override
             public void onDismiss(DialogInterface dialog) {

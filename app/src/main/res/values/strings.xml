@@ -57,5 +57,21 @@
     <string name="title_activity_details_user">Detalhes da Conta</string>
     <string name="password_info">Para prosseguir com a atualização informe abaixo sua senha.</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="txtlinha">_______________</string>
+    <string name="nova_participa_o">NOVA PARTICIPAÇÂO</string>
+    <string name="txtlinha2">___________________</string>
+    <string name="preencha_os_dados_do_sinistro_antes_de_enviar_a_participacao">Preencha os dados do sinistro antes de enviar a participacao</string>
+    <string name="detalhes_do_acidente">Detalhes do Acidente</string>
+    <string name="enviar">Enviar</string>
+    <string name="todo">TODO</string>
+    <string name="para_visualizar_clique_no_registro_do_sinistro">Para Visualizar clique no Registro do Sinistro</string>
+    <string name="bem_vindo">Bem Vindo</string>
+    <string name="registrar_ocorr_ncia">Registrar Ocorrência</string>
+    <string name="hist_rico_de_ocorr_ncias">Histórico de Ocorrências</string>
+    <string name="traco">___________________</string>
+    <string name="detalhes_do_ve_culo_terceiro_e_condutor">Detalhes do veículo Terceiro e Condutor</string>
+    <string name="empresa_seguradora_dos_ve_culos">Empresa Seguradora dos Veículos:</string>
+    <string name="gravar">Gravar</string>
+    <string name="endere_o_da_seguradora">Endereço da Seguradora:</string>
 
 </resources>

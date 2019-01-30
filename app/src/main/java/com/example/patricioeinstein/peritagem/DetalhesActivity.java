@@ -8,8 +8,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
@@ -43,7 +41,6 @@ import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
 import com.zfdang.multiple_images_selector.SelectorSettings;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -109,7 +106,7 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         setContentView(R.layout.participarsinistro);
         Intent intent = getIntent();
         ut= (Utilizador) intent.getSerializableExtra("utilizador");
-
+        Fresco.initialize(getApplicationContext());
         StrictMode.VmPolicy.Builder builderr = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builderr.build());
 
@@ -121,7 +118,7 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
         progressBar = (ProgressBar) findViewById(R.id.snackbarp);
         txtFotos = (TextView) findViewById(R.id.txtFotos);
         fotos = (GridView) findViewById(R.id.fotosgrid);
-        Fresco.initialize(getApplicationContext());
+
 
         btnfotos = (Button) findViewById(R.id.btnSelecionarFotos);
 
@@ -135,10 +132,8 @@ public class DetalhesActivity extends AppCompatActivity implements  LocationList
                     @Override
                     public void onClick(DialogInterface dialog, int escolher) {
                         if (items[escolher]=="CAMERA")
-
                         {
                             tirarfoto ();
-
                         }
 
                         else if (items[escolher]=="GALERIA")
@@ -281,69 +276,39 @@ public class GenericFileProvider extends FileProvider{
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-
-            Uri uri = data.getData();
-
-            try{
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),uri);
-                imageView = (ImageView) findViewById(R.id.imageView);
-                imageView.setImageBitmap(bitmap);
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        else if(requestCode==REQUEST_IMAGE_CAPTURE && resultCode==RESULT_OK){
-            try {
-                for (String result :mResults){
-                    i = i+1;
-                    Bitmap btp = BitmapFactory.decodeStream(getContentResolver().openInputStream(Uri.parse(currentPhoto)));
-                    ImageView imgv = (ImageView) findViewById(R.id.imageView);
-                    imgv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                    imgv.setImageURI(Uri.fromFile(new File(result)));
-                    imgv.setImageBitmap(btp);
-                    fotosselecionadas.add(imgv);
-                }
-            }
-            catch (FileNotFoundException fnex){
-                Toast.makeText(getApplicationContext(),"Foto nao encontrada",Toast.LENGTH_SHORT).show();
-//
-            }
-            MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
-            fotos.setAdapter(myAdapter);
-        }
-//selecionar multiplas imagens
-        if(requestCode == REQUEST_CODE) {
-            if(resultCode == Activity.RESULT_OK) {
-                mResults = data.getStringArrayListExtra(SelectorSettings.SELECTOR_RESULTS);
-                assert mResults != null;
-
-                // show results in textview
-                StringBuffer sb = new StringBuffer();
-                sb.append(String.format("Foram Selecionadas %d fotos:", mResults.size())).append("\n");
-                for(String result : mResults) {
-                    i = i+1;
-                    //ImageView imageView = new ImageView(this);
-
+        if(requestCode==REQUEST_IMAGE_CAPTURE && resultCode==RESULT_OK){
                     ImageView image = new ImageView(this);
                     image.setLayoutParams(new android.view.ViewGroup.LayoutParams(500,400));
                     image.setScaleType(ImageView.ScaleType.CENTER_CROP);
                     image.setPadding(4,4,4,4);
                     image.getMaxWidth();
                     image.getMaxHeight();
+                    image.setImageURI(Uri.parse(currentPhoto));
+                    fotosselecionadas.add(image);
+        }
+//selecionar multiplas imagens (Galeria)
+        else if(requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK) {
 
+                mResults = data.getStringArrayListExtra(SelectorSettings.SELECTOR_RESULTS);
+                assert mResults != null;
+                // show results in textview
+                StringBuffer sb = new StringBuffer();
+                sb.append(String.format("Foram Selecionadas %d fotos:", mResults.size())).append("\n");
+                for(String result : mResults) {
+                    i = i+1;
+                    ImageView image = new ImageView(this);
+                    image.setLayoutParams(new android.view.ViewGroup.LayoutParams(500,400));
+                    image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                    image.setPadding(4,4,4,4);
+                    image.getMaxWidth();
+                    image.getMaxHeight();
                     image.setImageURI(Uri.fromFile(new File(result)));
                     fotosselecionadas.add(image);
                 }
                 txtFotos.setText(sb.toString());
-                MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
-                fotos.setAdapter(myAdapter);
             }
-        }
+        MyAdapter myAdapter=new MyAdapter(this,R.layout.grid_view_items,fotosselecionadas);
+        fotos.setAdapter(myAdapter);
         customCanvas = (CanvasView) findViewById(R.id.signature_canvas);
         super.onActivityResult(requestCode, resultCode, data);
     }
